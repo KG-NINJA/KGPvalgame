@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KGPval Game</title>
+  <meta name="description" content="GPTと対決！実際のタスクを使った簡易KGPvalゲーム" />
+  <meta property="og:title" content="KGPval Game" />
+  <meta property="og:description" content="GPTと対決！タスクに挑戦してスコアを競おう。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="ogp.png" />
+  <meta property="og:url" content="https://username.github.io/kgpval-game/" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrapper">
+    <section class="card" aria-labelledby="game-title">
+      <h1 id="game-title">KGPval Game</h1>
+      <p id="task-text" class="lead">お題を読み込み中…</p>
+      <form id="answer-form" class="game-form">
+        <label for="user-answer" class="label">あなたの回答</label>
+        <textarea
+          id="user-answer"
+          name="answer"
+          maxlength="200"
+          rows="3"
+          placeholder="ここに答えを書いてください"
+          required
+        ></textarea>
+        <div class="actions">
+          <button type="submit" class="primary">対決する！</button>
+        </div>
+      </form>
+      <section id="results" class="results" hidden>
+        <h2 class="results-title">結果発表</h2>
+        <p><span class="label">あなたの回答</span><span id="user-answer-display"></span></p>
+        <p><span class="label">模範解答</span><span id="gpt-answer-display"></span></p>
+        <p><span class="label">スコア</span><span id="score-display"></span></p>
+        <button type="button" id="share-button" class="secondary">Twitterにシェア</button>
+      </section>
+    </section>
+    <footer class="footer">#KGNINJA</footer>
+  </main>
+  <script src="main.js" defer></script>
+</body>
+</html>

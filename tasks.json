@@ -1,0 +1,10 @@
+[
+  {
+    "input": "Explain why the sky is blue.",
+    "ideal": "Because of Rayleigh scattering of sunlight in the atmosphere."
+  },
+  {
+    "input": "Summarize: 'AI is transforming industries by automating tasks and enhancing decision-making.'",
+    "ideal": "AI is reshaping industries through automation and better decisions."
+  }
+]
