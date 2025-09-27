@@ -56,7 +56,7 @@ form.addEventListener("submit", e => {
     `お題: ${currentTask.input}`,
     `私の答え: 「${ans}」`,
     `スコア: ${score}点`,
-    "あなたも挑戦→ https://username.github.io/kgpval-game/",
+    "あなたも挑戦→  https://kg-ninja.github.io/KGPvalgame/",
     "#KGPvalGame #KGNINJA"
   ].join("\n");
   shareBtn.onclick = () =>
