@@ -1,10 +1,12 @@
 [
-  {
-    "input": "Explain why the sky is blue.",
-    "ideal": "Because of Rayleigh scattering of sunlight in the atmosphere."
-  },
-  {
-    "input": "Summarize: 'AI is transforming industries by automating tasks and enhancing decision-making.'",
-    "ideal": "AI is reshaping industries through automation and better decisions."
-  }
+  {"input": "Why is the sky blue?", "ideal": "Because of Rayleigh scattering in the atmosphere."},
+  {"input": "Summarize: 'AI is transforming industries...'", "ideal": "AI is reshaping industries through automation."},
+  {"input": "Translate 'Good morning' into Japanese.", "ideal": "おはようございます。"},
+  {"input": "What is 7 * 8?", "ideal": "56"},
+  {"input": "Name a mammal that can fly.", "ideal": "Bat"},
+  {"input": "Summarize: 'The Earth revolves around the Sun once per year.'", "ideal": "Earth orbits the Sun annually."},
+  {"input": "What is the capital of France?", "ideal": "Paris"},
+  {"input": "Give a synonym for 'happy'.", "ideal": "Joyful"},
+  {"input": "What is H2O commonly known as?", "ideal": "Water"},
+  {"input": "Translate 'ありがとう' into English.", "ideal": "Thank you"}
 ]
