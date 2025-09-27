@@ -7,8 +7,9 @@ ds = load_dataset("openai/gdpval", split="train")
 tasks = []
 for rec in ds:
     prompt = rec.get("prompt", "")
-    # データ構造によって ideal の場所が異なる場合あり
-    ideal = rec.get("ideal") or rec.get("reference") or ""
+    ideal = ""
+    if rec.get("reference_file_urls"):
+        ideal = rec["reference_file_urls"][0]
     tasks.append({"input": prompt, "ideal": ideal})
 
 with open("tasks.json", "w", encoding="utf-8") as f:

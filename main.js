@@ -26,9 +26,17 @@ const buildShareUrl = (userAnswer, score) => {
 fetch("tasks.json")
   .then(resp => resp.json())
   .then(data => {
-    tasks = data.filter(t => t.input && t.ideal);
+    tasks = data.filter(t => t.input);
+    if (tasks.length === 0) {
+      document.querySelector("#task-text").textContent = "タスクがありません。tasks.jsonを確認してください。";
+      return;
+    }
     currentTask = tasks[Math.floor(Math.random() * tasks.length)];
     document.querySelector("#task-text").textContent = currentTask.input;
+  })
+  .catch(err => {
+    document.querySelector("#task-text").textContent = "tasks.jsonの読み込みに失敗しました。";
+    console.error(err);
   });
 
 form.addEventListener("submit", (event) => {
@@ -36,14 +44,14 @@ form.addEventListener("submit", (event) => {
   const trimmedAnswer = textarea.value.trim();
   if (!trimmedAnswer) return;
 
-  const ideal = currentTask.ideal.toLowerCase();
+  const ideal = (currentTask.ideal || "").toLowerCase();
   const ans = trimmedAnswer.toLowerCase();
 
-  const overlap = ans.split(/\s+/).filter(w => ideal.includes(w)).length;
-  const score = Math.min(100, Math.floor(overlap / ideal.split(/\s+/).length * 100));
+  const overlap = ideal ? ans.split(/\s+/).filter(w => ideal.includes(w)).length : 0;
+  const score = ideal ? Math.min(100, Math.floor(overlap / ideal.split(/\s+/).length * 100)) : 0;
 
   userAnswerDisplay.textContent = trimmedAnswer;
-  gptAnswerDisplay.textContent = currentTask.ideal;
+  gptAnswerDisplay.textContent = currentTask.ideal || "模範解答なし";
   scoreDisplay.textContent = formatScore(score);
   resultsSection.hidden = false;
 
