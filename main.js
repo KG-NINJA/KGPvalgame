@@ -56,9 +56,9 @@ form.addEventListener("submit", e => {
     `お題: ${currentTask.input}`,
     `私の答え: 「${ans}」`,
     `スコア: ${score}点`,
-    "あなたも挑戦→  https://kg-ninja.github.io/KGPvalgame/",
+     "あなたも挑戦→ https://kg-ninja.github.io/KGPvalgame/",
     "#KGPvalGame #KGNINJA"
   ].join("\n");
-  shareBtn.onclick = () =>
-    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+  return `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`;
+};
 });
