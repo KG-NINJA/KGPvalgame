@@ -16,7 +16,7 @@ const buildShareUrl = (userAnswer, score) => {
     `お題: ${currentTask.input}`,
     `私の答え: 「${userAnswer}」`,
     `スコア: ${score}点`,
-    "あなたも挑戦→ https://kg-ninja.github.io/KGPvalgame/,
+    "あなたも挑戦→ https://username.github.io/kgpval-game/",
     "#KGPvalGame #KGNINJA"
   ].join("\n");
   return `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`;
@@ -26,7 +26,7 @@ const buildShareUrl = (userAnswer, score) => {
 fetch("tasks.json")
   .then(resp => resp.json())
   .then(data => {
-    tasks = data;
+    tasks = data.filter(t => t.input && t.ideal);
     currentTask = tasks[Math.floor(Math.random() * tasks.length)];
     document.querySelector("#task-text").textContent = currentTask.input;
   });
