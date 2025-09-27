@@ -16,7 +16,7 @@ const buildShareUrl = (userAnswer, score) => {
     `お題: ${currentTask.input}`,
     `私の答え: 「${userAnswer}」`,
     `スコア: ${score}点`,
-    "あなたも挑戦→ https://username.github.io/kgpval-game/",
+    "あなたも挑戦→ https://kg-ninja.github.io/KGPvalgame/,
     "#KGPvalGame #KGNINJA"
   ].join("\n");
   return `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`;
